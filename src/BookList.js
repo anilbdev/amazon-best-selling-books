@@ -1,13 +1,18 @@
 import React from 'react'
 import BookItem from './components/BookItem'
+import './BookList.css'
 
-function BookList() {
+function BookList({ books }) {
     return (
-        <div>
-            Book List
-            <BookItem/>
-            <BookItem/>
-            <BookItem/>
+        <div className="bookList">
+            {
+                books.map((book, i) => {
+                    return (
+                        <div >
+                            <BookItem key={i} book={book} />
+                        </div>)
+                })
+            }
         </div>
     )
 }
